@@ -142,7 +142,6 @@ cfg.groups = {
     "player.calladmin",
     "phone.store"
   },
- 
   -- Emergency
   ["police"] = {
     _config = { gtype = "job", onleave = police.onleave, onjoin = police.onjoin, onspawn = police.onspawn },
