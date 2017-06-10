@@ -1,0 +1,3 @@
+
+
+				local killerentitytype = GetEntityType(killer)
