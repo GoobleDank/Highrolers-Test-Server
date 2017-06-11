@@ -80,6 +80,7 @@ meth_choices["Take"] = {function(player,choice)
       vRP.varyHunger(user_id, 20)
       vRPclient.notify(player,{"~b~ Smoking Meth."})
       vRPclient.playScreenEffect(player,{"Rampage",3*60})
+      
       play_smoke(player)
       vRP.closeMenu(player)
     end

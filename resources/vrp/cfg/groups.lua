@@ -85,7 +85,7 @@ local user_id = vRP.getUserId(player)
 end
 
 function brokia.onleave(player)
-  vRPclient.notify(source,{"You have deactivated your Contract"})
+  vRPclient.notify(source,{"You have canceled your Contract"})
 end
 
 local function user_spawn(player)

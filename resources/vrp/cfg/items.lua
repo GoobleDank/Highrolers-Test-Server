@@ -40,14 +40,13 @@ cfg.items = {
   ["Nail Polish Remover"] = {"Nail Polish Remover","",{},0.1},
   ["Window Cleaner"] = {"Window Cleaner","",{},1.0},
   ["Cold Medicine"] = {"Cold Medicine","",{},0.3},
-  ["Hydrochloic Acid"] = {"Hydrochloic Acid","",{},1.0},
+  ["Hydrochloric Acid"] = {"Hydrochloric Acid","",{},1.0},
   ["Box of Matches"] = {"Box of Matches","",{},0.1},
   ["Brake Fluid"] = {"Brake Fluid","",{},1.0},
   ["lye"] = {"lye","",{},0.3},
   ["Drain Cleaner"]= {"Drain Cleaner","",{},0.3},
 --Phones
   ["brokia"]= {"Brokia Phone","",{},0.0}
-  -- items["breed"] = {"Bread","",breed_choices,0.5}
 }
 
 -- load more items function
@@ -66,5 +65,6 @@ end
 load_item_pack("required")
 load_item_pack("food")
 load_item_pack("drugs")
+
 
 return cfg

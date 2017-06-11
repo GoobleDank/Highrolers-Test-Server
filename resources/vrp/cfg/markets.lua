@@ -43,7 +43,8 @@ cfg.market_types = {
     ["whiskey"] = 20,
     ["beer"] = 10,
     ["wine"] = 55,
-    ["wings"] = 25
+    ["wings"] = 25,
+    ["Box Of Matches"] = 8
   }
 }
 
