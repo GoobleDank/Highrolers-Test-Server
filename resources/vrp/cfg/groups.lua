@@ -77,6 +77,12 @@ function taxi.onleave(player)
 end
 
 local brokia = {}
+
+function brokia.onspawn(player)
+ vRPclient.notify(source,{"You have replaced your phone"})
+end
+
+
 function brokia.onjoin(player)
 local user_id = vRP.getUserId(player)
   vRP.giveInventoryItem(user_id,"brokia", 1)
@@ -86,6 +92,20 @@ end
 
 function brokia.onleave(player)
   vRPclient.notify(source,{"You have canceled your Contract"})
+end
+
+local driverls = {}
+
+
+function driverls.onjoin(player)
+local user_id = vRP.getUserId(player)
+  vRP.giveInventoryItem(user_id,"driverls", 1)
+  vRP.giveMoney(user_id,-50)
+	vRPclient.notify(source,{"You got your Driver's License"})
+end
+
+function driverls.onleave(player)
+  vRPclient.notify(source,{"You have lost your Driver's License"})
 end
 
 local function user_spawn(player)
@@ -128,9 +148,17 @@ cfg.groups = {
     "player.list",
     "citizen.paycheck"
   },
+  
+  ["Driver's License"] = {
+    _config = { gtype = "license", onspawn = driverls.onspawn, onjoin = driverls.onjoin, onleave = driverls.onleave },
+    "driver.ls"
+  },
+  
+  
+  
   --phone groups
   ["Activate Brokia Phone"] = {
-    _config = { gtype = "phone", onjoin = brokia.onjoin, onleave = brokia.onleave },
+    _config = { gtype = "phone", onspawn = brokia.onspawn, onjoin = brokia.onjoin, onleave = brokia.onleave },
     "player.phone",
     "player.calladmin",
     "phone.bill"
@@ -192,6 +220,13 @@ cfg.groups = {
     "emergency.revive",
     "police.access"
   },
+  ["Delivery Person"] = {
+    _config = { gtype = "job" }
+    "player.calladmin",
+    "citizen.paycheck",
+    "delivery.shop",
+    "delivery.vehicle"
+  },
   ["citizen"] = {
     _config = { gtype = "job" }
     "player.calladmin",
@@ -219,7 +254,8 @@ cfg.selectors = {
   ["Jobs"] = {
     _config = {x = -268.363739013672, y = -957.255126953125, z = 31.22313880920410, blipid = 351, blipcolor = 47},
     "taxi",
-    "citizen"
+    "citizen",
+    "Delivery Person"
   },
   ["police"] = {
     _config = {x = 437.924987792969,y = -987.974182128906, z = 30.6896076202393 , blipid = 351, blipcolor= 38, permission = "police.access" },

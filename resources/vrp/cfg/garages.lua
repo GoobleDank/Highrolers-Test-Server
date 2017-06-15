@@ -175,9 +175,9 @@ cfg.garage_types = {
     ["thrust"] = {"Thrust",75000, ""},
     ["vader"] = {"Vader",9000, ""}
   },
-    ["beaters"] = {
-    _config = {vtype="car", blipid=56,blipcolor=5},
-    ["emperor2"] = {"Albany Emperor",350,""}
+    ["Bike Salesmen"] = {
+    _config = {vtype="firstcar", blipid=56,blipcolor=5},
+    ["BMX"] = {"Bike",50,""}
   },
    ["taxi"] = {
     _config = {vtype="car", blipid=56, blipcolor=5, permission = "taxi.vehicle"},
@@ -196,6 +196,11 @@ cfg.garage_types = {
     _config = {vtype="car",blipid=61,blipcolor=3,permission="emergency.vehicle"},
     ["ambulance"] = {"Ambulance",100,""},
     ["firetruk"] = {"FireTruck",100,""}
+  },
+  ["Delivery Vehicles"] = {
+    _config = {vtype="car",blipid=61,blipcolor=3,permission="delivery.vehicle"},
+    ["boxville2"] = {"Delivery Truck",1000,""}
+    
   },
   ["bikes"] = {
     _config = {vtype="bike",blipid=376,blipcolor=4},
@@ -274,7 +279,8 @@ cfg.garages = {
   {"boats",-849.5, -1368.64, 1.6},
   {"boats",1538, 3902, 30.35},
   {"trailers",-978.674682617188,-2994.29028320313,13.945068359375},
-  {"transport",-962.553039550781,-2965.82470703125,13.9450702667236}
+  {"transport",-962.553039550781,-2965.82470703125,13.9450702667236},
+  {"Delivery Vehicles",-411.050354003906,6176.798828125,31.4781970977783}
 }
 
 return cfg

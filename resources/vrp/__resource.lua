@@ -20,6 +20,7 @@ server_scripts{
   "modules/emotes.lua",
   "modules/police.lua",
   "modules/home.lua",
+  "module/driver.lua",
 
   -- basic implementations
   "modules/basic_phone.lua",
@@ -50,7 +51,8 @@ client_scripts{
   "client/basic_garage.lua",
   "client/police.lua",
   "client/admin.lua",
-  "client/paycheck.lua"
+  "client/paycheck.lua",
+  "client/driver.lua"
 }
 
 -- client files

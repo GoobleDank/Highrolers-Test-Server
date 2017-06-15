@@ -28,7 +28,7 @@ AutoStartResources:
     - vehcontrol
     - pausemenu-title
     - NeverWanted
-#    - Driver
+    - Driver
     - msq-directions-hud
     - NameTag
     - chat

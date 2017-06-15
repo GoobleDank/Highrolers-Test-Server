@@ -11,6 +11,22 @@ local function play_drink(player)
   vRPclient.playAnim(player,{true,seq,false})
 end
 
+local function play_drunk(player)
+   local seq = {
+     {"move_m@drunk@verydrunk","idle",1},
+     {"move_m@drunk@verydrunk","idle_intro",1},
+     {"move_m@drunk@verydrunk","walk",1},
+     {"move_m@drunk@verydrunk","wstart_l_0",1},
+     {"move_m@drunk@verydrunk","wstart_r_0",1},
+     {"move_m@drunk@verydrunk","wstop_l_0",1},
+     {"move_m@drunk@verydrunk","wstop_r_0",1}
+   }
+
+  vRPclient.playAnim(player,{true,seq,true})
+  SetTimeout(15000)
+  vRP.stopAnim(upper)
+end
+
 local function play_smoke(player)
    local seq = {
      {"mp_player_int_uppersmoke","mp_player_int_smoke_enter",1},
@@ -80,13 +96,13 @@ meth_choices["Take"] = {function(player,choice)
       vRP.varyHunger(user_id, 20)
       vRPclient.notify(player,{"~b~ Smoking Meth."})
       vRPclient.playScreenEffect(player,{"Rampage",3*60})
-      
+
       play_smoke(player)
       vRP.closeMenu(player)
     end
   end
 end}
-items["meth"] = {"Meth","The Devils Cough Medicine",meth_choices,0.5}
+items["meth"] = {"Meth","The Devils Cough Medicine",meth_choices,2}
 
 
 

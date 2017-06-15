@@ -13,6 +13,22 @@ local function play_eat(player)
   vRPclient.playAnim(player,{true,seq,false})
 end
 
+local function play_drunk(player)
+   local seq = {
+     {"move_m@drunk@verydrunk","idle",1},
+     {"move_m@drunk@verydrunk","idle_intro",1},
+     {"move_m@drunk@verydrunk","walk",1},
+     {"move_m@drunk@verydrunk","wstart_l_0",1},
+     {"move_m@drunk@verydrunk","wstart_r_0",1},
+     {"move_m@drunk@verydrunk","wstop_l_0",1},
+     {"move_m@drunk@verydrunk","wstop_r_0",1}
+   }
+
+  vRPclient.playAnim(player,{true,seq,true})
+  SetTimeout(15000)
+  vRP.stopAnim(false)
+end
+
 local function play_drink(player)
   local seq = {
     {"mp_player_intdrink","intro_bottle",1},
@@ -170,6 +186,7 @@ vodka_choices["Drink"] = {function(player,choice)
       vRPclient.notify(player,{"~b~ Drinking Vodka."})
       vRPclient.playScreenEffect(player,{"DrugsDrivingIn",3*60})
       play_drink(player)
+      play_drunk(player)
       vRP.closeMenu(player)
     end
   end
@@ -187,6 +204,7 @@ whiskey_choices["Drink"] = {function(player,choice)
       vRPclient.notify(player,{"~b~ Drinking Whiskey."})
       vRPclient.playScreenEffect(player,{"DrugsDrivingIn",3*60})
       play_drink(player)
+      play_drunk(player)
       vRP.closeMenu(player)
     end
   end
@@ -204,6 +222,7 @@ jackncoke_choices["Drink"] = {function(player,choice)
       vRPclient.notify(player,{"~b~ Drinking Jack n Coke."})
       vRPclient.playScreenEffect(player,{"DrugsDrivingIn",3*60})
       play_drink(player)
+      play_drunk(player)
       vRP.closeMenu(player)
     end
   end
@@ -221,6 +240,7 @@ beer_choices["Drink"] = {function(player,choice)
       vRPclient.notify(player,{"~b~ Drinking Beer."})
       vRPclient.playScreenEffect(player,{"DrugsDrivingIn",3*60})
       play_drink(player)
+      play_drunk(player)
       vRP.closeMenu(player)
     end
   end
@@ -238,6 +258,7 @@ wine_choices["Drink"] = {function(player,choice)
       vRPclient.notify(player,{"~b~ Drinking Wine."})
       vRPclient.playScreenEffect(player,{"DrugsDrivingIn",3*60})
       play_drink(player)
+      play_drunk(player)
       vRP.closeMenu(player)
     end
   end

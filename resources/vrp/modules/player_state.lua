@@ -7,6 +7,8 @@ AddEventHandler("vRP:playerSpawn", function(user_id, source, first_spawn)
   local player = source
   local data = vRP.getUserDataTable(user_id)
   local tmpdata = vRP.getUserTmpTable(user_id)
+  local driverls = vRP.hasPermission(user_id,"driver.ls")
+  local brokia = vRP.hasGroup(user_id,"Brokia Phone")
 
   if first_spawn then -- first spawn
     -- cascade load customization then weapons
@@ -68,6 +70,14 @@ AddEventHandler("vRP:playerSpawn", function(user_id, source, first_spawn)
       local z = cfg.spawn_position[3]+math.random()*cfg.spawn_radius*2-cfg.spawn_radius
       data.position = {x=x,y=y,z=z}
       vRPclient.teleport(source,{x,y,z})
+    end
+
+    if driverls then
+      vRP.giveInventoryItem(user_id,"Driverls",1)
+    end
+
+    if brokia then
+      vRP.removeUserGroup(user_id,"Brokia Phone")
     end
 
     -- load character customization
